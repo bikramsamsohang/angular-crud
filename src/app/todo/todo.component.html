@@ -1,0 +1,12 @@
+<span [ngClass]="['todo', 'clearfix']">  
+  <span [ngClass]="'task'">
+    <span  [hidden]="showEdit">
+      {{todo.task}}
+    </span>
+    <input type="text" [hidden]="!showEdit" [(ngModel)]="task">
+  </span>
+
+  <input type="button" value="Save" [hidden]="!showEdit" (click)="editTask()"> 
+  <input type="button" value="Edit" [hidden]="showEdit" (click)="editTask()"> &nbsp;
+  <input type="button" value="Delete" [hidden]="showEdit" (click)="delete(todo)">
+</span>

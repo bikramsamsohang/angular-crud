@@ -1,0 +1,11 @@
+<form (ngSubmit)="add()" >
+  <input type="text" name="task" [(ngModel)]="task">
+  <input type="submit" value="Add Task">
+</form>
+<ul [ngClass]="'todo-list'">
+  <li *ngFor="let todo of todos">
+    <app-todo [todo]="todo" [delete]="delete" [edit]="edit" >
+
+    </app-todo>
+  </li>
+</ul>
